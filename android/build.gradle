@@ -1,0 +1,38 @@
+// هذا هو build.gradle في مجلد التطبيق
+
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+}
+repositories {
+    google()
+    mavenCentral()
+    jcenter()  // أضف هذا إذا كان لديك بعض التبعيات التي تأتي من jcenter
+}
+
+android {
+    compileSdkVersion 33  // تحديث للنسخة المطلوبة من الـ SDK
+    defaultConfig {
+        applicationId "com.example.app"
+        minSdkVersion 21
+        targetSdkVersion 33
+        versionCode 1
+        versionName "1.0"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation 'androidx.appcompat:appcompat:1.6.1'  // إضافة تبعية لـ AndroidX
+    implementation 'org.jetbrains.kotlin:kotlin-stdlib:1.9.0'  // Kotlin
+    implementation 'org.codehaus.groovy:groovy:3.0.22'  // إضافة Groovy
+    implementation 'com.squareup.retrofit2:retrofit:2.9.0'  // مثال على Retrofit
+
+    // أضف أي تبعيات أخرى إذا لزم الأمر
+}
